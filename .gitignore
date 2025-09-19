@@ -1,0 +1,21 @@
+# Node modules (don’t upload big dependencies)
+node_modules/
+
+# Environment variables (keep secrets safe)
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: editor settings
+.vscode/
+.idea/
