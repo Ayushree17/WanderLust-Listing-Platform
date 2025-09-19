@@ -23,7 +23,8 @@ app.get("/", (req, res) => {
 
 
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderLust";
+// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderLust";
+const MONGO_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/wanderLust";
 
 main()
   .then(() => {
@@ -56,6 +57,7 @@ app.use("/listings/:id/reviews", reviews);
 // });
 
 
-app.listen(8080, () => {
-  console.log("Server is running on port 8080");
+const PORT = process.env.PORT || 8080; // fallback for local testing
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
